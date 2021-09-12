@@ -1,0 +1,5 @@
+CREATE DATABASE gameZoneData;
+USE gameZoneData;
+CREATE TABLE userAccounts(Username VARCHAR(15) NOT NULL PRIMARY KEY, Password VARCHAR(1000));
+CREATE TABLE highScores(Username VARCHAR(15) REFERENCES userAccounts (Username) ON DELETE CASCADE ON UPDATE CASCADE, RememberTheSequence INT, GetTheSquares INT, MatchTheColours INT);
+INSERT INTO userAccounts VALUES ("Admin","TopSecret");
